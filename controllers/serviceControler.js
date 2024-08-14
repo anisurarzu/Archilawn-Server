@@ -1,20 +1,21 @@
-const Service = require("../models/Slider");
+const Service = require("../models/Service");
 
-// @desc Create a new slider
-// @route POST /api/sliders
+// @desc Create a new service
+
+// @route POST /api/services
 const createService = async (req, res) => {
   const { image, title, packages } = req.body;
 
   try {
-    const slider = await Service.create({ image, title, packages });
-    res.status(201).json(slider);
+    const service = await Service.create({ image, title, packages });
+    res.status(201).json(service);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-// @desc Get all sliders
-// @route GET /api/sliders
+// @desc Get all services
+// @route GET /api/services
 const getService = async (req, res) => {
   try {
     const services = await Service.find();
@@ -24,8 +25,8 @@ const getService = async (req, res) => {
   }
 };
 
-// @desc Update a slider
-// @route PUT /api/sliders/:id
+// @desc Update a service
+// @route PUT /api/services/:id
 const updateService = async (req, res) => {
   const { id } = req.params;
 
@@ -33,7 +34,7 @@ const updateService = async (req, res) => {
     const service = await Service.findByIdAndUpdate(id, req.body, {
       new: true,
     });
-    if (!slider) {
+    if (!service) {
       return res.status(404).json({ error: "Service not found" });
     }
     res.status(200).json(service);
@@ -42,8 +43,8 @@ const updateService = async (req, res) => {
   }
 };
 
-// @desc Delete a slider
-// @route DELETE /api/sliders/:id
+// @desc Delete a service
+// @route DELETE /api/services/:id
 const deleteService = async (req, res) => {
   const { id } = req.params;
 
