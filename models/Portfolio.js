@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const SliderSchema = new mongoose.Schema(
+const PortfolioSchema = new mongoose.Schema(
   {
     image: {
       type: String,
@@ -10,7 +10,7 @@ const SliderSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    subtitle: {
+    details: {
       type: String,
       required: true,
     },
@@ -18,4 +18,4 @@ const SliderSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Slider", SliderSchema);
+module.exports = mongoose.model("Portfolio", PortfolioSchema);

@@ -1,22 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const { protect } = require("../middleware/authMiddleware");
-const SliderController = require("../controllers/sliderController");
+const PortfolioController = require("../controllers/portfolioController");
 
 // @desc Create a new slider
 // @route POST /api/sliders
-router.post("/sliders", protect, SliderController.createSlider);
+router.post("/portfolio", protect, PortfolioController.createPortfolio);
 
 // @desc Get all sliders
 // @route GET /api/sliders
-router.get("/sliders", protect, SliderController.getSliders);
+router.get("/portfolios", protect, PortfolioController.getPortfolio);
 
 // @desc Update a slider
 // @route PUT /api/sliders/:id
-router.put("/sliders/:id", protect, SliderController.updateSlider);
+router.put("/portfolio/:id", protect, PortfolioController.updatePortfolio);
 
 // @desc Delete a slider
 // @route DELETE /api/sliders/:id
-router.delete("/sliders/:id", protect, SliderController.deleteSlider);
+router.delete("/portfolio/:id", protect, PortfolioController.deletePortfolio);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { protect } = require("../middleware/authMiddleware");
-const ServiceController = require("../controllers/ServiceController");
+const ServiceController = require("../controllers/serviceController");
 
 // @desc Create a new service
 // @route POST /api/services

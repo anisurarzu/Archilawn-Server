@@ -3,10 +3,10 @@ const Slider = require("../models/Slider");
 // @desc Create a new slider
 // @route POST /api/sliders
 const createSlider = async (req, res) => {
-  const { image, title, subTitle } = req.body;
+  const { image, title, subtitle } = req.body;
 
   try {
-    const slider = await Slider.create({ image, title, subTitle });
+    const slider = await Slider.create({ image, title, subtitle });
     res.status(201).json(slider);
   } catch (error) {
     res.status(400).json({ error: error.message });
