@@ -9,7 +9,7 @@ router.post("/service", protect, ServiceController.createService);
 
 // @desc Get all services
 // @route GET /api/services
-router.get("/services", protect, ServiceController.getService);
+router.get("/services", ServiceController.getService);
 
 // @desc Update a service
 // @route PUT /api/services/:id
