@@ -9,7 +9,7 @@ router.post("/portfolio", protect, PortfolioController.createPortfolio);
 
 // @desc Get all sliders
 // @route GET /api/sliders
-router.get("/portfolios", protect, PortfolioController.getPortfolio);
+router.get("/portfolios", PortfolioController.getPortfolio);
 
 // @desc Update a slider
 // @route PUT /api/sliders/:id

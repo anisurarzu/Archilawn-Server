@@ -9,7 +9,7 @@ router.post("/sliders", protect, SliderController.createSlider);
 
 // @desc Get all sliders
 // @route GET /api/sliders
-router.get("/sliders", protect, SliderController.getSliders);
+router.get("/sliders", SliderController.getSliders);
 
 // @desc Update a slider
 // @route PUT /api/sliders/:id
