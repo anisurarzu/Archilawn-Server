@@ -5,6 +5,7 @@ const authRoutes = require("./routes/authRoutes");
 const sliderRoutes = require("./routes/sliderRoutes"); // Import slider routes
 const serviceRoutes = require("./routes/serviceRoutes"); // Import slider routes
 const portfolioRoutes = require("./routes/portfolioRoutes"); // Import slider routes
+const orderRoutes = require("./routes/orderRoutes"); // Import slider routes
 require("dotenv").config();
 
 const app = express();
@@ -28,10 +29,13 @@ app.use("/api", serviceRoutes); // Add slider routes under /api
 // Portfolio Routes
 app.use("/api", portfolioRoutes); // Add slider routes under /api
 
+// Order Routes
+app.use("/api", orderRoutes); // Add slider routes under /api
+
 // Root Route
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
